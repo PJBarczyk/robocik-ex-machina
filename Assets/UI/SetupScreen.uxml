@@ -14,7 +14,7 @@
                     <ui:VisualElement name="heightmap-preview" style="max-width: none; min-width: auto; min-height: auto; max-height: none; height: -78px; width: 220px; padding-bottom: 0; flex-grow: 1;" />
                 </ui:VisualElement>
                 <ui:Button text="Select heightmap from file" display-tooltip-when-elided="true" name="select-heightmap-button" />
-                <ui:Label text="Label" display-tooltip-when-elided="true" style="margin-bottom: 5px; border-bottom-width: 1px; border-bottom-color: rgba(0, 0, 0, 255);" />
+                <ui:Label text="Heightmap does not need to be grayscale, it&apos;ll be converted during import. Try to keep your heightmaps less than thousand pixels lenghtwise and heightwise." display-tooltip-when-elided="true" style="margin-bottom: 10px; border-bottom-width: 1px; border-bottom-color: rgb(0, 0, 0); font-size: 12px; padding-bottom: 10px;" />
                 <ui:TextField picking-mode="Ignore" label="Area [m²]" name="area-input" binding-path="areaInput" value="50" text="50" />
                 <ui:TextField picking-mode="Ignore" label="Depth [m]" name="depth-input" binding-path="areaInput" value="1" text="1" />
                 <ui:VisualElement class="sep" />
