@@ -7,7 +7,7 @@ public class CameraMaster : MonoBehaviour
     public Transform target;
 
     public AnimationCurve zoomCurve;
-    [Min (.001f)] public float zoomMaxDistance = 10;
+    [Min (.001f)] public float zoomMaxDistance = 20;
     [Min (.001f)] public float zoomMinDistance = 1;
     
     private bool _rotationModeEnabled = false;
@@ -16,11 +16,6 @@ public class CameraMaster : MonoBehaviour
     public float zoom;
     private Vector3 _basePosition;
     private Vector3 _baseRotation;
-
-    private void Start()
-    {
-        zoomMaxDistance = TopologyData.area / 100f;
-    }
 
     private void LateUpdate()
     {
