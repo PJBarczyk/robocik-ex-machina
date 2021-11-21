@@ -9,7 +9,6 @@ public class TargetPlacer : MonoBehaviour
     public Target targetPrefab;
 
     public Topology topology;
-    public float minRelativeDepth;
     
     private void Awake()
     {
@@ -19,7 +18,7 @@ public class TargetPlacer : MonoBehaviour
 
     private void OnTopologyBuilt()
     {
-        var possiblePositions = topology.VerticesBelowDepth(minRelativeDepth);
+        var possiblePositions = topology.VerticesBelowDepth(GameData.minTargetSubmersion);
         
         // Shuffle:
         var random = new System.Random();
