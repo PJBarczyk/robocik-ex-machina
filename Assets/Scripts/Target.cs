@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
 
+[RequireComponent(typeof(SphereCollider))]
 public class Target : MonoBehaviour
 {
     private void Start()
     {
         GetComponent<VisualEffect>()?.Stop();
+        GetComponent<SphereCollider>().radius = GameData.targetTriggerRadius;
     }
 
     private void OnTriggerEnter(Collider other)
