@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/CustomEditors.uss?fileID=7433441132597879392&amp;guid=8ba6623943f30d84c8b46cf34ad754b2&amp;type=3#CustomEditors" />
+    <ui:VisualElement class="section">
+        <ui:Label text="Models" display-tooltip-when-elided="true" class="header" />
+        <uie:ObjectField label="Throttle To Thrust Model" name="throttle-to-thrust-model" binding-path="throttleToThrustModel" />
+        <uie:ObjectField label="Physics Model" name="physics-model" binding-path="physicsModel" />
+    </ui:VisualElement>
+    <ui:VisualElement class="section">
+        <ui:Label text="Hydrophone" display-tooltip-when-elided="true" class="header" />
+        <ui:Slider picking-mode="Ignore" label="Radius" value="1" high-value="5" show-input-field="true" name="hydrophone-radius" binding-path="hydrophoneRadius" />
+    </ui:VisualElement>
+</ui:UXML>

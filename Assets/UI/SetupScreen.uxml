@@ -1,0 +1,35 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/SetupScreen.uss?fileID=7433441132597879392&amp;guid=27480f5ebbe04e44a93077956b6d6ae6&amp;type=3#SetupScreen" />
+    <ui:VisualElement style="flex-direction: row; justify-content: space-between; width: 100%; height: 424%;">
+        <ui:VisualElement name="left-column" class="column-section">
+            <ui:VisualElement class="section" style="justify-content: space-between; align-items: stretch; flex-wrap: nowrap; flex-direction: column;">
+                <ui:Label text="Sample heightmaps" display-tooltip-when-elided="true" class="title" />
+                <ui:VisualElement name="sample-heightmaps" style="flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: flex-start;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="centre-column" class="column-section" style="margin-right: 25px;">
+            <ui:VisualElement class="section" style="justify-content: space-between; align-items: stretch; flex-wrap: nowrap; flex-direction: column;">
+                <ui:Label text="Simulation setup" display-tooltip-when-elided="true" class="title" />
+                <ui:VisualElement style="flex-direction: column; justify-content: flex-start; align-items: center;">
+                    <ui:VisualElement name="heightmap-preview" style="max-width: none; min-width: auto; min-height: auto; max-height: none; height: -78px; width: 220px; padding-bottom: 0; flex-grow: 1;" />
+                </ui:VisualElement>
+                <ui:Button text="Select heightmap from file" display-tooltip-when-elided="true" name="select-heightmap-button" />
+                <ui:Label text="Label" display-tooltip-when-elided="true" style="margin-bottom: 5px; border-bottom-width: 1px; border-bottom-color: rgba(0, 0, 0, 255);" />
+                <ui:TextField picking-mode="Ignore" label="Area [m²]" name="area-input" binding-path="areaInput" value="50" text="50" />
+                <ui:TextField picking-mode="Ignore" label="Depth [m]" name="depth-input" binding-path="areaInput" value="1" text="1" />
+                <ui:VisualElement class="sep" />
+                <ui:TextField picking-mode="Ignore" label="Target count" name="target-count-input" value="1" text="1" />
+                <ui:Button text="Start simulation" display-tooltip-when-elided="true" name="start-button" focusable="true" tabindex="2" enable-rich-text="true" class="start-button" style="height: auto; width: auto;" />
+                <ui:Label text="The game can stutter as the density of vertices per area is high. Increasing the heatmap sampling interval will move the lag spikes apart though it won&apos;t not fix them. Beware that sampling rate affect the quality of heatmap. If the stuttering is intense, consider turning the heatmap off altogether via &quot;Toggle heatmap&quot; button." display-tooltip-when-elided="true" name="performance-warning-density" enable-rich-text="false" class="warning" />
+                <ui:Label text="The game can stutter as the heightmap size is large. Increasing the heatmap refresh interval will move the lag spikes apart though it won&apos;t get rid of them. Refresh rate does not affect heatmap quality." display-tooltip-when-elided="true" name="performance-warning-size" class="warning" style="overflow: visible; visibility: visible;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="right-column" class="column-section">
+            <ui:VisualElement class="section" style="justify-content: space-between; align-items: stretch; flex-wrap: nowrap; flex-direction: column;">
+                <ui:Label text="How to play" display-tooltip-when-elided="true" class="title" />
+                <ui:Button text="English / Polski" display-tooltip-when-elided="true" name="how-to-play-language-switch" />
+                <ui:Label text=" Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam malesuada laoreet augue vel semper. Mauris scelerisque orci a vulputate aliquam. Suspendisse euismod purus in nunc consectetur semper. Phasellus id eleifend quam. Vestibulum id elit felis. Duis sodales et est vel semper. Ut eget erat vitae quam cursus blandit vitae vitae metus. Curabitur quis purus eget mauris posuere posuere. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse leo turpis, elementum quis ornare non, condimentum non nibh. Pellentesque mollis libero at lobortis fermentum. Nam porta justo vel tortor dictum, id eleifend est fermentum. Phasellus rhoncus dictum erat, eu imperdiet tortor elementum non. Nulla facilisi. Etiam at ultricies magna.&#10;&#10;Phasellus at nisl diam. Nam sit amet risus arcu. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed pharetra rhoncus ipsum ullamcorper commodo. Fusce erat odio, malesuada ut sollicitudin vitae, ultricies eget odio. Aenean id diam vel purus feugiat convallis. Mauris lobortis diam eu urna efficitur, eget porta enim egestas. Nam vitae leo quis metus convallis auctor vel vel mi. Nullam sit amet imperdiet mauris, vitae eleifend massa. Suspendisse at metus semper, pharetra tortor eget, cursus nisl. Cras sem diam, dapibus vel nisl eget, lacinia vestibulum lorem. Maecenas sapien leo, mattis vel viverra sed, porttitor non nibh. Sed in nibh imperdiet, feugiat augue vitae, ornare tellus.&#10;&#10;Duis nec scelerisque lectus, sed eleifend mi. Integer eu erat nulla. Sed ac massa et libero cursus ultricies et eget magna. Nam bibendum, risus non maximus ornare, ipsum mauris sagittis enim, eu egestas odio diam non turpis. Suspendisse eget augue eu dolor gravida fringilla ac sit amet ligula. Etiam eu pharetra augue. Morbi est dui, condimentum id eleifend id, aliquam non nibh. Phasellus cursus ipsum ut lectus ullamcorper feugiat. Nullam libero mi, imperdiet vitae nisl sit amet, ullamcorper pretium diam. Donec eget ex enim. Phasellus ut feugiat ante. Integer eu lorem sed diam rhoncus gravida nec nec quam. Donec semper arcu quis est sagittis porta. Nulla sodales vestibulum dolor, id tincidunt urna condimentum pulvinar. Nullam non nunc a urna dignissim gravida sed sit amet dui. " display-tooltip-when-elided="true" name="how-to-play-label" style="white-space: normal;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

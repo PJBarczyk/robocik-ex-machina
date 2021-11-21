@@ -1,0 +1,28 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/SimulationUI.uss?fileID=7433441132597879392&amp;guid=088640d23e22c7d49bbeba0a0f730026&amp;type=3#SimulationUI" />
+    <ui:VisualElement style="width: 100%; height: 100%;">
+        <ui:VisualElement name="header" style="height: 70px; background-color: rgba(0, 0, 0, 0.2); flex-direction: row; justify-content: space-between;">
+            <ui:Button text="Back to menu" display-tooltip-when-elided="true" name="back-to-menu" focusable="false" style="margin-left: 12px; margin-right: 12px; margin-top: 12px; margin-bottom: 12px; width: 170px;" />
+            <ui:Label text="Targets left: 0" display-tooltip-when-elided="true" name="targets-left" class="header-label" />
+            <ui:Label text="Crashes: 0" display-tooltip-when-elided="true" name="crashes" enable-rich-text="true" class="header-label" />
+        </ui:VisualElement>
+        <ui:VisualElement name="main" style="flex-grow: 0; height: auto; flex-basis: 100%; justify-content: space-between; flex-direction: row;">
+            <ui:VisualElement name="left" style="flex-grow: 1; min-height: auto; min-width: auto; flex-basis: 20px; width: auto; border-left-color: rgb(50, 50, 50); border-right-color: rgb(50, 50, 50); border-top-color: rgb(50, 50, 50); border-bottom-color: rgb(50, 50, 50);">
+                <ui:Foldout text="Camera" name="camera" value="false" class="foldout">
+                    <ui:Toggle label="Lock rotation" name="camera-lock-rotation" binding-path="rotationLock" focusable="true" />
+                    <ui:Slider picking-mode="Ignore" label="Zoom" value="0.2" high-value="1" show-input-field="false" direction="Horizontal" inverted="false" binding-path="zoom" name="camera-zoom" />
+                </ui:Foldout>
+                <ui:Foldout text="Sonar readings" name="sonar-readings" value="false" class="foldout" style="flex-grow: 0;" />
+                <ui:Foldout text="Heatmap" name="heatmap" value="false" class="foldout" style="flex-grow: 0;">
+                    <ui:Button text="Reset heatmap" display-tooltip-when-elided="true" name="reset-heatmap" />
+                    <ui:Button text="Toggle heatmap" display-tooltip-when-elided="true" name="toggle-heatmap" />
+                    <ui:Label text="Fiddle with sliders below if the game is stuttering" display-tooltip-when-elided="true" style="padding-top: 10px; margin-top: 10px; border-top-width: 1px; border-left-color: rgb(50, 50, 50); border-right-color: rgb(50, 50, 50); border-top-color: rgb(50, 50, 50); border-bottom-color: rgb(50, 50, 50);" />
+                    <ui:Slider picking-mode="Ignore" label="Sampling interval" value="0.1" high-value="0.5" name="sampling-interval-slider" low-value="0.05" tooltip="Lower intervals lead to more precise heatmaps, but high vertice density will cause significant lag. Note that large heightmaps with sufficiently big area won&apos;t cause slowdown." />
+                    <ui:Slider picking-mode="Ignore" label="Heatmap refresh interval" value="0.3" high-value="5" name="heatmap-refresh-interval-slider" low-value="0.1" show-input-field="false" tooltip="Refresh requires an iteration over each vertex, so the interval does&apos;t ease lag spikes, only distributes them in time. For large heightmaps use higher intervals. Note that vertice density does not inluence refresh-based slowdowns." />
+                </ui:Foldout>
+            </ui:VisualElement>
+            <ui:VisualElement name="centre" style="flex-grow: 1;" />
+            <ui:VisualElement name="right" style="flex-grow: 1; min-width: auto; min-height: auto; flex-basis: 20px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
